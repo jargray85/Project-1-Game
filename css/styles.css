@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+    font-size: xx-large;
+    font-family: fantasy;
+    margin-top: 1%;
+}
+
+.background-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.subtitle {
+    position: relative;
+    text-align: center;
+    margin-top: 48%;
+    color: white;
+}
