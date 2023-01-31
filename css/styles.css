@@ -5,9 +5,9 @@
 }
 
 .title {
+    font-size: 60px;
     position: relative;
     text-align: center;
-    font-size: xx-large;
     font-family: fantasy;
     margin-top: 1%;
 }
@@ -16,12 +16,109 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: ;
 }
+
+.buttons {
+    display: flex;
+    position: relative;
+    margin-top: 5%;
+}
+
+.bonfire-button {
+    background-color: transparent;
+    border: none;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: none;
+}
+
+.axe-button {
+    background-color: transparent;
+    border: none;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: none;
+}
+
+.flashlight-button {
+    background-color: transparent;
+    border: none;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: none;
+}
+
+.compass-button {
+    background-color: transparent;
+    border: none;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: none;
+}
+
+.tent-button {
+    background-color: transparent;
+    border: none;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: none;
+}
+
+.coat-button {
+    background-color: transparent;
+    border: none;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: none;
+}
+
+.choice-buttons {
+    position: relative;
+    text-align: center;
+}
+
+.yes-button {
+    height: 80px;
+    width: 80px;
+    margin: 1%;
+    background-color: forestgreen;
+    display: none;
+}
+
+.no-button {
+    height: 80px;
+    width: 80px;
+    margin: 1%;
+    background-color: forestgreen;
+    display: none;
+}
+
+.monsters {
+    position: relative;
+}
+
+.monster1 {
+    height: 10%;
+    width: 10%;
+    justify-content: center;
+    display: none;
+}
+
+.monster2 {
+    display: none;
+}
+
+.monster3 {
+    display: none;
+}
+
+
 
 .subtitle {
     position: relative;
     text-align: center;
-    margin-top: 48%;
+    margin-top: 55%;
     color: white;
+    font-family: fantasy;
 }
