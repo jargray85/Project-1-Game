@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+}
+
 .title {
     font-size: 60px;
     position: relative;
@@ -12,11 +18,29 @@
     margin-top: 1%;
 }
 
+.subtitle {
+    position: relative;
+    text-align: center;
+    color: darkgray;
+    font-family: fantasy;
+    animation: blinker 1.5s linear infinite;
+}
+
+.prologue1 {
+    text-align: center;
+    display: none;
+}
+
+.prologue2 {
+    text-align: center;
+    display: none;
+}
+
 .background-image {
     position: absolute;
     height: 100%;
     width: 100%;
-    object-fit: ;
+    object-fit: contain;
 }
 
 .buttons {
@@ -106,19 +130,12 @@
 }
 
 .monster2 {
+    justify-content: center;
     display: none;
 }
 
 .monster3 {
+    justify-content: center;
     display: none;
 }
 
-
-
-.subtitle {
-    position: relative;
-    text-align: center;
-    margin-top: 55%;
-    color: white;
-    font-family: fantasy;
-}
