@@ -10,8 +10,22 @@
     }
 }
 
+@keyframes fade-in {
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  @keyframes scale {
+    100% {
+      transform: scale(1);
+    }
+  }
+
 .title {
     font-size: 60px;
+    color: rgb(23, 233, 205);
     position: relative;
     text-align: center;
     font-family: fantasy;
@@ -19,34 +33,206 @@
 }
 
 .subtitle {
+    font-size: 25px;
     position: relative;
     text-align: center;
-    color: darkgray;
+    color: mediumvioletred;
     font-family: fantasy;
-    animation: blinker 1.5s linear infinite;
+    margin-top: 5%;
+    animation: blinker 1.75s linear infinite;
+}
+
+.pro1-div {
+    position: relative;
 }
 
 .prologue1 {
+    margin-top: 1%;
     text-align: center;
+    font-family: fantasy;
     display: none;
+}
+
+span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+}
+  
+span:nth-child(1) {
+    animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+  
+span:nth-child(2) {
+    animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+  
+span:nth-child(3) {
+    animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+  
+span:nth-child(4) {
+    animation: fade-in 0.8s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(5) {
+    animation: fade-in 0.8s 1.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(6) {
+    animation: fade-in 0.8s 2.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(7) {
+    animation: fade-in 0.8s 2.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(8) {
+    animation: fade-in 0.8s 2.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(9) {
+    animation: fade-in 0.8s 3.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(10) {
+    animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(11) {
+    animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(12) {
+    animation: fade-in 0.8s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(13) {
+    animation: fade-in 0.8s 1.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
 .prologue2 {
+    margin-top: 3%;
+    position: relative;
     text-align: center;
     display: none;
+    font-family: fantasy;
+}
+
+.proceed-buttons {
+    position: relative;
+}
+
+.proceed {
+    text-align: center;
+    display: none;
+    font-family: fantasy;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.inventory-text {
+    position: relative;
+}
+
+.inventory-message {
+    font-size: 30px;
+    text-align: center;
+    font-family: fantasy;
+    margin-top: 5%;
+    display: none;
+    justify-content: center;
+}
+
+.game-over-text1 {
+    position: relative;
+}
+
+.game-over1 {
+    font-size: 30px;
+    text-align: center;
+    font-family: fantasy;
+    margin-top: 5%;
+    display: none;
+    justify-content: center;
+    color: azure;
+    margin-top: 15%;
+}
+
+.game-over-text2 {
+    position: relative;
+}
+
+.game-over2 {
+    font-size: 40px;
+    text-align: center;
+    font-family: fantasy;
+    margin-top: 5%;
+    display: none;
+    justify-content: center;
+    color: azure;
+}
+
+.monster1-text {
+    position: relative;
+}
+
+.m1-text {
+    font-size: 30px;
+    text-align: center;
+    font-family: fantasy;
+    margin-top: 5%;
+    display: none;
+    justify-content: center;
+    color: azure;
+}
+
+.m1-jacket-response {
+    position: relative;
+}
+
+.m1-jacket {
+    font-size: 30px;
+    text-align: center;
+    font-family: fantasy;
+    margin-top: 5%;
+    display: none;
+    justify-content: center;
+    color: azure;
+}
+
+.m1-tent-response {
+    position: relative;
+}
+
+.m1-tent {
+    font-size: 30px;
+    text-align: center;
+    font-family: fantasy;
+    margin-top: 5%;
+    display: none;
+    justify-content: center;
+    color: azure;
+}
+
+.m1-compass-response {
+    position: relative;
+}
+
+.m1-compass {
+    font-size: 30px;
+    text-align: center;
+    font-family: fantasy;
+    margin-top: 5%;
+    display: none;
+    justify-content: center;
+    color: red;
+}
+
+.background {
+    position: absolute;
 }
 
 .background-image {
-    position: absolute;
-    height: 100%;
+    margin-top: 20%;
     width: 100%;
-    object-fit: contain;
+    height: 100%;
 }
 
 .buttons {
     display: flex;
     position: relative;
-    margin-top: 5%;
 }
 
 .bonfire-button {
@@ -79,6 +265,7 @@
     margin-left: 3%;
     margin-right: 3%;
     display: none;
+    justify-content: right;
 }
 
 .tent-button {
@@ -87,6 +274,7 @@
     margin-left: 3%;
     margin-right: 3%;
     display: none;
+    justify-content: center;
 }
 
 .coat-button {
@@ -95,6 +283,7 @@
     margin-left: 3%;
     margin-right: 3%;
     display: none;
+    justify-content: center;
 }
 
 .choice-buttons {
@@ -106,6 +295,7 @@
     height: 80px;
     width: 80px;
     margin: 1%;
+    text-align: center;
     background-color: forestgreen;
     display: none;
 }
@@ -114,18 +304,30 @@
     height: 80px;
     width: 80px;
     margin: 1%;
+    text-align: center;
     background-color: forestgreen;
     display: none;
 }
 
-.monsters {
+.ok-button {
+    height: 80px;
+    width: 80px;
+    margin-top: 5%;
+    text-align: center;
+    background-color: forestgreen;
+    display: none;
+}
+
+.monster-1 {
     position: relative;
 }
 
 .monster1 {
-    height: 10%;
-    width: 10%;
-    justify-content: center;
+    position: relative;
+    height: 15%;
+    width: 15%;
+    margin-left: 45%;
+    margin-top: 18%;
     display: none;
 }
 
