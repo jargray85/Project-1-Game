@@ -14,8 +14,17 @@ let yesButton = document.querySelector(".yes-button")
 let noButton = document.querySelector(".no-button")
 let okButton = document.querySelector(".ok-button")
 let m1Jacket = document.querySelector(".m1-jacket")
-let m1tent = document.querySelector(".m1-tent")
-let m1compass = document.querySelector(".m1-compass")
+let m1Tent = document.querySelector(".m1-tent")
+let m1Compass = document.querySelector(".m1-compass")
+let m1Text = document.querySelector(".m1-text")
+let m2Text = document.querySelector(".m2-text")
+let m2Axe = document.querySelector(".m2-axe")
+let m2Bonfire = document.querySelector(".m2-bonfire")
+let m2Flashlight = document.querySelector(".m2-flashlight")
+let m3Text = document.querySelector(".m3-text")
+let m3Compass = document.querySelector(".m3-compass")
+let m3Axe = document.querySelector(".m3-axe")
+let m3Flashlight = document.querySelector(".m3-flashlight")
 let monsterOne = document.querySelector(".monster1")
 let monsterTwo = document.querySelector(".monster2")
 let monsterThree = document.querySelector(".monster3")
@@ -27,9 +36,8 @@ let tent = document.querySelector(".tent-button")
 let coat = document.querySelector(".coat-button")
 let gameOver1 = document.querySelector(".game-over1")
 let gameOver2 = document.querySelector(".game-over2")
-let m1Text = document.querySelector(".m1-text")
 
-// function to transition to next background image 
+// function to transition to Prologue
 function prologueTransition() {
     let background = document.querySelector(".background-image");
     background.src = "project1_assets/inventory-screen.jpg";
@@ -72,6 +80,7 @@ function prologueTransition() {
     }
 }
 
+// Function to transition to inventory screen
 function inventoryTransition() {
     background.style.marginTop = "0%";
     prologueOne.style.display = "none";
@@ -94,6 +103,7 @@ function inventoryTransition() {
     }
 }
 
+// Function to move on to the first monster
 function monsterOneTransition() {
     background.src = "project1_assets/monster1-background.jpg";
     background.style.marginTop = "0";
@@ -111,35 +121,95 @@ function monsterOneTransition() {
     })
     tent.addEventListener("click", () => {
         m1Text.style.display = "none";
-        m1tent.style.display = "block";
+        m1Tent.style.display = "block";
         monsterTwoTransition();
     })
     compass.addEventListener("click", () => {
         m1Text.style.display = "none";
-        m1compass.style.display = "block";
+        m1Compass.style.display = "block";
         const gameOver = setInterval(() => {
             background.src = "project1_assets/game-over-background.jpg";
             monsterOne.style.display = "none";
             coat.style.display = "none";
             compass.style.display = "none";
             tent.style.display = "none";
-            m1compass.style.display = "none";
+            m1Compass.style.display = "none";
             gameOver1.style.display = "block";
             gameOver2.style.display = "block";
         }, 4500)
     })
 }
 
+// Function to move onto the second Monster
 function monsterTwoTransition() {
     const monsterTwoStart = setInterval(() => {
         background.src = "project1_assets/monster2-background.jpg";
         monsterOne.style.display = "none";
-        monsterTwo.style.display - "inline-block";
+        monsterTwo.style.display = "inline-block";
+        m1Tent.style.display = "none";
+        m1Jacket.style.display = "none";
+        coat.style.display = "none";
+        compass.style.display = "none";
+        tent.style.display = "none";
+        axe.style.display = "flex";
+        bonfire.style.display = "flex";
+        flashlight.style.display = "flex";
+        m2Text.style.display = "block";
     }, 4500)
+    axe.addEventListener("click", () => {
+        clearInterval(monsterTwoStart);
+        m2Text.style.display = "none";
+        m2Axe.style.display = "block";
+        const gameOver = setInterval(() => {
+            monsterTwo.style.display = "none";
+            axe.style.display = "none";
+            flashlight.style.display = "none";
+            bonfire.style.display = "none";
+            m2Text.style.display = "none";
+            m2Axe.style.display = "none";
+            background.src = "project1_assets/game-over-background.jpg";
+            gameOver1.style.display = "block";
+            gameOver2.style.display = "block";
+        }, 4500)
+    })
+    bonfire.addEventListener("click", () => {
+        clearInterval(monsterTwoStart);
+        m2Text.style.display = "none";
+        m2Bonfire.style.display = "block";
+        monsterThreeTransition();
+    })
+    flashlight.addEventListener("click", () => {
+        clearInterval(monsterTwoStart);
+        m2Text.style.display = "none";
+        m2Flashlight.style.display = "block";
+        const gameOver = setInterval(() => {
+            monsterTwo.style.display = "none";
+            axe.style.display = "none";
+            flashlight.style.display = "none";
+            bonfire.style.display = "none";
+            m2Text.style.display = "none";
+            m2Flashlight.style.display = "none";
+            background.src = "project1_assets/game-over-background.jpg";
+            gameOver1.style.display = "block";
+            gameOver2.style.display = "block";
+        }, 4500)
+    })
 }
 
+// Function to move onto the third monster
 function monsterThreeTransition() {
-    background.src = "project1_assets/monster3-background.jpg"
+    const monsterThreeStart = setInterval(() => {
+        background.src = "project1_assets/monster3-background.jpg";
+        monsterTwo.style.display = "none";
+        monsterThree.style.display = "inline-block";
+        axe.style.display = "block";
+        flashlight.style.display = "block";
+        compass.style.display = "block";
+        bonfire.style.display = "none";
+        m2Text.style.display = "none";
+        m2Bonfire.style.display = "none";
+        m3Text.style.display = "block";
+    }, 4500)
 }
 
 // Click functions
