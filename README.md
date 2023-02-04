@@ -3,6 +3,9 @@
 Wireframe:
 https://git.generalassemb.ly/seirfx-dahlia/project-1/issues/14
 
+Game link:
+https://jargray85.github.io/
+
 Directions: 
 
 1. Click the body of the title screen to begin
