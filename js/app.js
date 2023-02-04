@@ -37,6 +37,11 @@ let tent = document.querySelector(".tent-button")
 let coat = document.querySelector(".coat-button")
 let gameOver1 = document.querySelector(".game-over1")
 let gameOver2 = document.querySelector(".game-over2")
+let cred1 = document.querySelector(".credit1-text")
+let bfly1 = document.querySelector(".butterfly1")
+let bfly2 = document.querySelector(".butterfly2")
+let humBird1 = document.querySelector(".hummingbird-one")
+let humBird2 = document.querySelector("hummingbird2")
 
 // function to transition to Prologue
 function prologueTransition() {
@@ -171,7 +176,6 @@ function monsterTwoTransition() {
         tent.style.display = "none";
         axe.style.display = "flex";
         bonfire.style.display = "flex";
-        flashlight.style.display = "flex";
         m2Text.style.display = "block";
     }, 4500)
     axe.addEventListener("click", () => {
@@ -195,22 +199,6 @@ function monsterTwoTransition() {
         m2Text.style.display = "none";
         m2Bonfire.style.display = "block";
         monsterThreeTransition();
-    })
-    flashlight.addEventListener("click", () => {
-        clearInterval(monsterTwoStart);
-        m2Text.style.display = "none";
-        m2Flashlight.style.display = "block";
-        const gameOver = setInterval(() => {
-            monsterTwo.style.display = "none";
-            axe.style.display = "none";
-            flashlight.style.display = "none";
-            bonfire.style.display = "none";
-            m2Text.style.display = "none";
-            m2Flashlight.style.display = "none";
-            background.src = "project1_assets/gameover.jpg";
-            gameOver1.style.display = "block";
-            gameOver2.style.display = "block";
-        }, 4500)
     })
 }
 
@@ -287,19 +275,26 @@ function monsterThreeTransition() {
         const fearConquered = setInterval(() => {
             m3Flashlight.style.display = "none";
             m3FlashlightTwo.style.display = "block";
-            }, 3000)
+            }, 4000)
         const moveToCredits = setInterval(() => {
+            clearInterval(fearConquered)
             creditSceneOne();
             gameOver1.style.display = "none";
             gameOver2.style.display = "none";
             monsterThree.style.display = "none";
             flashlight.style.display = "none";
-        }, 5500)
+            m3FlashlightTwo.style.display = "none";
+        }, 8000)
         })
 }
 
 function creditSceneOne() {
     background.src = "project1_assets/credits-1.jpg"
+    bfly1.style.display = "flex";
+    m3FlashlightTwo.style.display = "none";
+    cred1.style.display = "block";
+    humBird1.style.display = "flex";
+    bfly2.style.display = "flex";
 }
 
 // Click functions
