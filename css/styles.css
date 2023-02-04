@@ -102,6 +102,14 @@ span:nth-child(13) {
     animation: fade-in 0.8s 1.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
 
+/* animation for final text on monster 3 */
+span:nth-child(14) {
+    animation: fade-in 0.8s 2.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+span:nth-child(15) {
+    animation: fade-in 0.8s 2.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
 .prologue2 {
     margin-top: 3%;
     position: relative;
@@ -189,7 +197,7 @@ span:nth-child(13) {
     margin-top: 5%;
     display: none;
     justify-content: center;
-    color: azure;
+    color: yellow;
 }
 
 .m1-tent-response {
@@ -203,7 +211,7 @@ span:nth-child(13) {
     margin-top: 5%;
     display: none;
     justify-content: center;
-    color: azure;
+    color: yellow;
 }
 
 .m1-compass-response {
@@ -231,7 +239,7 @@ span:nth-child(13) {
     margin-top: 10%;
     display: none;
     justify-content: center;
-    color: azure;
+    color: pink;
 }
 
 .m2-bonfire-response {
@@ -245,7 +253,7 @@ span:nth-child(13) {
     margin-top: 5%;
     display: none;
     justify-content: center;
-    color: azure;
+    color: greenyellow;
 }
 
 .m2-axe-response {
@@ -288,7 +296,7 @@ span:nth-child(13) {
     margin-top: 10%;
     display: none;
     justify-content: center;
-    color: azure;
+    color: purple;
 }
 
 .m3-axe-response {
@@ -299,7 +307,7 @@ span:nth-child(13) {
     font-size: 30px;
     text-align: center;
     font-family: fantasy;
-    margin-top: 5%;
+    margin-top: 10%;
     display: none;
     justify-content: center;
     color: red;
@@ -313,7 +321,7 @@ span:nth-child(13) {
     font-size: 30px;
     text-align: center;
     font-family: fantasy;
-    margin-top: 5%;
+    margin-top: 10%;
     display: none;
     justify-content: center;
     color: red;
@@ -323,11 +331,25 @@ span:nth-child(13) {
     position: relative;
 }
 
+.m3-flashlight-response2 {
+    position: relative;
+}
+
 .m3-flashlight {
     font-size: 30px;
     text-align: center;
     font-family: fantasy;
     margin-top: 10%;
+    display: none;
+    justify-content: center;
+    color: azure;
+}
+
+.m3-flashlight2 {
+    font-size: 50px;
+    text-align: center;
+    font-family: fantasy;
+    margin-top: 15%;
     display: none;
     justify-content: center;
     color: azure;

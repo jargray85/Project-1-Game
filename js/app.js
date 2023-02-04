@@ -25,6 +25,7 @@ let m3Text = document.querySelector(".m3-text")
 let m3Compass = document.querySelector(".m3-compass")
 let m3Axe = document.querySelector(".m3-axe")
 let m3Flashlight = document.querySelector(".m3-flashlight")
+let m3FlashlightTwo = document.querySelector(".m3-flashlight2")
 let monsterOne = document.querySelector(".monster1")
 let monsterTwo = document.querySelector(".monster2")
 let monsterThree = document.querySelector(".monster3")
@@ -74,11 +75,28 @@ function prologueTransition() {
         proceed.style.display = "none";
         yesButton.style.display = "none";
         noButton.style.display = "none";
-        background.src = "project1_assets/game-over-background.jpg";
+        background.src = "project1_assets/gameover.jpg";
         gameOver1.style.display = "block";
         gameOver2.style.display = "block";
     }
+    background.onclick = function() {
+        clearInterval(prologueTwoInit);
+        clearInterval(proceedInit);
+        clearInterval(choiceInit);
+        prologueOne.style.display = "none";
+    }
 }
+
+background.addEventListener("click", () => {
+    prologueTransition();    
+})
+
+// Function to remove event listener from background
+function backgroundReset(e) {
+    background.removeEventListener("click", prologueTransition())
+}
+// I am not able to use this properly at this point ^^ :/
+// the background will always trigger prologue
 
 // Function to transition to inventory screen
 function inventoryTransition() {
@@ -128,7 +146,7 @@ function monsterOneTransition() {
         m1Text.style.display = "none";
         m1Compass.style.display = "block";
         const gameOver = setInterval(() => {
-            background.src = "project1_assets/game-over-background.jpg";
+            background.src = "project1_assets/gameover.jpg";
             monsterOne.style.display = "none";
             coat.style.display = "none";
             compass.style.display = "none";
@@ -167,7 +185,7 @@ function monsterTwoTransition() {
             bonfire.style.display = "none";
             m2Text.style.display = "none";
             m2Axe.style.display = "none";
-            background.src = "project1_assets/game-over-background.jpg";
+            background.src = "project1_assets/gameover.jpg";
             gameOver1.style.display = "block";
             gameOver2.style.display = "block";
         }, 4500)
@@ -189,11 +207,16 @@ function monsterTwoTransition() {
             bonfire.style.display = "none";
             m2Text.style.display = "none";
             m2Flashlight.style.display = "none";
-            background.src = "project1_assets/game-over-background.jpg";
+            background.src = "project1_assets/gameover.jpg";
             gameOver1.style.display = "block";
             gameOver2.style.display = "block";
         }, 4500)
     })
+}
+
+// Remove flashlight event listener to use again later
+function flashlightReset() {
+    flashlight.removeEventListener("click")
 }
 
 // Function to move onto the third monster
@@ -210,12 +233,77 @@ function monsterThreeTransition() {
         m2Bonfire.style.display = "none";
         m3Text.style.display = "block";
     }, 4500)
+    compass.addEventListener("click", () => {
+        clearInterval(monsterThreeStart);
+        m3Text.style.display = "none";
+        m3Compass.style.display = "block";
+        m1Compass.style.display = "none";
+        const gameOver = setInterval(() => {
+            background.src = "project1_assets/gameover.jpg";
+            monsterThree.style.display = "none";
+            m3Compass.style.display = "none";
+            axe.style.display = "none";
+            flashlight.style.display = "none";
+            bonfire.style.display = "none";
+            m2Text.style.display = "none";
+            m2Flashlight.style.display = "none";
+            gameOver1.style.display = "block";
+            gameOver2.style.display = "block";
+            axe.style.display = "none";
+            flashlight.style.display = "none";
+            compass.style.display = "none";
+        }, 4500)
+    })
+    axe.addEventListener("click", () => {
+        clearInterval(monsterThreeStart);
+        m3Text.style.display = "none";
+        m3Axe.style.display = "block";
+        m2Axe.style.display = "none";
+        const gameOver = setInterval(() => {
+            background.src = "project1_assets/gameover.jpg";
+            monsterThree.style.display = "none";
+            m3Compass.style.display = "none";
+            m3Axe.style.display = "none";
+            axe.style.display = "none";
+            flashlight.style.display = "none";
+            bonfire.style.display = "none";
+            m2Text.style.display = "none";
+            m2Flashlight.style.display = "none";
+            gameOver1.style.display = "block";
+            gameOver2.style.display = "block";
+            axe.style.display = "none";
+            flashlight.style.display = "none";
+            compass.style.display = "none";
+        }, 4500)
+    })
+    flashlight.addEventListener("click", () => {
+        clearInterval(monsterThreeStart)
+        m3Text.style.display = "none";
+        m3Flashlight.style.display = "block";
+        m2Flashlight.style.display = "none";
+        compass.style.display = "none";
+        axe.style.display = "none";
+        flashlight.style.display = "none";
+        const fearConquered = setInterval(() => {
+            m3Flashlight.style.display = "none";
+            m3FlashlightTwo.style.display = "block";
+            }, 3000)
+        const moveToCredits = setInterval(() => {
+            creditSceneOne();
+            gameOver1.style.display = "none";
+            gameOver2.style.display = "none";
+            monsterThree.style.display = "none";
+            flashlight.style.display = "none";
+        }, 5500)
+        })
+}
+
+function creditSceneOne() {
+    background.src = "project1_assets/credits-1.jpg"
 }
 
 // Click functions
-background.addEventListener("click", () => {
-    prologueTransition();
-})
+
 
 yesButton.addEventListener("click", () => {
     inventoryTransition();
